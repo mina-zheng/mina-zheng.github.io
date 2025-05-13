@@ -1,16 +1,91 @@
+html, body {
+    background-color: rgb(40, 40, 40);
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
+    color:white;
+
+}
+
+.main {
+    height: 100%;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 70px 180px 100%;
+    grid-template-rows: 75% 25%;
+    grid-template-areas:
+        "icon menu main"
+        "icon menu terminal";
+}
+.container {
+    border: solid;
+    border-width: 1px;
+    border-color: rgb(45, 45, 45);
+    margin: 4px;
+    margin: 0;
+}
+
+.container.c1 {
+    background-color: black;
+    grid-area: menu;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+.container.c2 {
+    grid-area: main;
+    display: flex;
+    padding: 30px;
+}
+
+.c2 .maintext {
+    width: 50vw;
+    flex-shrink: 1;
+}
+.container.c3 {
+    background-color: black;
+    grid-area: terminal;
+}
+
+.container .menu {
+    height: 25px;
+    box-sizing: border-box;
+}
+
+.container .menu:hover{
+    background: rgb(71, 71, 71);
+}
+
+.container .menu.item1{
+    height: 50px;
+}
+
 p {
-    color: red;
-    font-size: 20px;
+    line-height: 2;
 }
 
-img {
-    height: auto;
-    width: 250px;
+.container.c4 {
+   background-color: black;
+   grid-area: icon; 
 }
 
-*{
-    font-family: "Arial"; 
-    text-align: center;
-    outline: 2px solid red;
-    
+.menu p {
+    font-size: 12px;
+    font-family: Arial;
+    line-height: 0.5;
+    margin: auto;
+    padding: 10px;
+}
+
+.variabletext {
+    color: rgb(129, 207, 255);
+}
+
+.commenttext {
+    color: rgb(4, 162, 78);
 }
