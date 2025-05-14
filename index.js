@@ -14,7 +14,6 @@ function showSection(section) {
 }
 
 const menuItems = document.querySelectorAll('.menu');
-
 menuItems.forEach(menu => {
     menu.addEventListener("click", () => {
         const text = menu.innerText.trim();

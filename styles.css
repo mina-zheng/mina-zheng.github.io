@@ -144,6 +144,9 @@ p {
 .commenttext {
     color: rgb(4, 162, 78);
 }
+.stringtext {
+    color: rgb(208, 127, 70);
+}
 
 .container.c3 .terminaltext { 
     padding: 0px;
