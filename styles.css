@@ -1,3 +1,7 @@
+* {
+    /* border:solid;  */
+}
+
 html, body {
     background-color: rgb(40, 40, 40);
     height: 100%;
@@ -5,23 +9,24 @@ html, body {
     padding: 0;
 
     font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
     font-weight: 500;
     color:white;
 
 }
 
-.main {
+.main { /*big window */
     height: 100%;
     width: 100%;
 
     display: grid;
-    grid-template-columns: 70px 180px 100%;
+    grid-template-columns: 70px 180px 1fr;
     grid-template-rows: 75% 25%;
     grid-template-areas:
         "icon menu main"
         "icon menu terminal";
 }
-.container {
+.container { /*layout boxes*/
     border: solid;
     border-width: 1px;
     border-color: rgb(45, 45, 45);
@@ -29,30 +34,35 @@ html, body {
     margin: 0;
 }
 
-.container.c1 {
-    background-color: black;
+.container.c1 { /*menu*/
+    background-color: rgb(25, 25, 25);
     grid-area: menu;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 
 }
-.container.c2 {
+.container.c2 { /*main text area*/
     grid-area: main;
-    display: flex;
     padding: 30px;
 }
 
-.c2 .maintext {
+.maintext, .maintext_about_me, .maintext_resume {
     width: 50vw;
-    flex-shrink: 1;
-}
-.container.c3 {
-    background-color: black;
-    grid-area: terminal;
 }
 
-.container .menu {
+.maintext_about_me, .maintext_resume {
+    display: none;
+}
+.container.c3 { /*terminal*/
+    background-color: rgb(25, 25, 25);
+    grid-area: terminal;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.container .menu { /*individual files*/
     height: 25px;
     box-sizing: border-box;
 }
@@ -61,21 +71,36 @@ html, body {
     background: rgb(71, 71, 71);
 }
 
-.container .menu.item1{
-    height: 50px;
+.container .menu.item1{ 
+    height: 45px;
+    pointer-events:none;
 }
 
 p {
     line-height: 2;
 }
 
-.container.c4 {
-   background-color: black;
+.container.c4 { /*icons*/
+   background-color: rgb(25, 25, 25);
    grid-area: icon; 
+   display:flex;
+   flex-direction: column;
 }
 
-.menu p {
-    font-size: 12px;
+.container.c4 .icon {
+    height: 70px;
+    margin: 0 0 5px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container.c4 .icon.frame1 {
+    margin-top:10px;
+}
+
+.menu p {  /*file text*/
+    font-size: 13px;
     font-family: Arial;
     line-height: 0.5;
     margin: auto;
@@ -88,4 +113,43 @@ p {
 
 .commenttext {
     color: rgb(4, 162, 78);
+}
+
+.container.c3 .terminaltext { 
+    padding: 0;
+    flex: 0 0 700px;
+    display: flex;
+}
+
+.container.c3 .terminaltext p{
+    flex: 0 0 260px;
+    margin-left: 20px;
+}
+.container.c3 input {
+    flex:1;
+    background-color: black;
+    font-family:'Courier New', Courier, monospace;
+    font-size:15px;
+    color:white;
+    margin-bottom:1px;
+    border:none;
+}
+
+input:focus{
+    outline:none;
+}
+
+ul {
+    line-height: 2;
+}
+
+#github {
+    filter: invert(1);
+    height:50px;
+
+}
+
+#linkedin {
+    width: 65px;
+    filter:grayscale(1) contrast(100) invert(1);
 }
