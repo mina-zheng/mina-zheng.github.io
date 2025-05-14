@@ -1,6 +1,7 @@
 * {
-    /* border:solid;  */
-}
+    /* border:solid;
+    border-width: 2px; */
+} 
 
 html, body {
     background-color: rgb(40, 40, 40);
@@ -57,14 +58,40 @@ html, body {
 .container.c3 { /*terminal*/
     background-color: rgb(25, 25, 25);
     grid-area: terminal;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
+    display: grid;
+    grid-template-columns: 500px 1fr;
+    grid-template-rows: 75% 25%;
+    grid-template-areas:
+        "top blankt"
+        "left right";
 }
 
-.container .menu { /*individual files*/
+.terminal.menu{
+    pointer-events: none;
+    width:450px;
+    height:40px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:13px;
+    color:rgb(131, 131, 131);
+    margin-left:20px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button {
+    padding:5px;
+    box-sizing: border-box;
+}
+.button#current {
+    color: white;
+    border-bottom:2px solid rgb(0, 105, 197);
+}
+.menu { /*individual files*/
     height: 25px;
     box-sizing: border-box;
+    padding: 3px;
+    margin-left:5px;
 }
 
 .container .menu:hover{
@@ -72,8 +99,11 @@ html, body {
 }
 
 .container .menu.item1{ 
-    height: 45px;
+    font-weight:600;
     pointer-events:none;
+    box-sizing:border-box;
+    margin-top: 15px;
+    margin-left:none;
 }
 
 p {
@@ -116,18 +146,20 @@ p {
 }
 
 .container.c3 .terminaltext { 
-    padding: 0;
-    flex: 0 0 700px;
-    display: flex;
+    padding: 0px;
+    grid-area: left;
+    display:flex;
+    align-items: center;
 }
 
 .container.c3 .terminaltext p{
-    flex: 0 0 260px;
     margin-left: 20px;
+    margin-bottom: 15px;
+    margin-right:10px;
 }
 .container.c3 input {
-    flex:1;
-    background-color: black;
+    grid-area: right;
+    background-color:  rgb(25,25,25);
     font-family:'Courier New', Courier, monospace;
     font-size:15px;
     color:white;

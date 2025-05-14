@@ -18,11 +18,11 @@ const menuItems = document.querySelectorAll('.menu');
 menuItems.forEach(menu => {
     menu.addEventListener("click", () => {
         const text = menu.innerText.trim();
-        if (text === "main.py") {
+        if (text === "| main.py") {
             showSection(main_text);
-        } else if (text === "about_me.py") {
+        } else if (text === "| about_me.py") {
             showSection(about_me_text);
-        } else if (text === "resume.py") {
+        } else if (text === "| resume.py") {
             showSection(resume_text);
         }
     });
