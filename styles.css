@@ -14,6 +14,7 @@ html, body {
     font-weight: 500;
     color:white;
 
+
 }
 
 .main { /*big window */
@@ -46,6 +47,8 @@ html, body {
 .container.c2 { /*main text area*/
     grid-area: main;
     padding: 30px;
+    overflow: hidden; /* Prevent outer scroll */
+    position: relative;
 }
 
 .maintext, .maintext_about_me, .maintext_resume {
@@ -54,6 +57,15 @@ html, body {
 
 .maintext_about_me, .maintext_resume {
     display: none;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto; 
+}
+
+.maintext_resume {
+    display: none;
+    width: 100%;
+    height: auto;
 }
 .container.c3 { /*terminal*/
     background-color: rgb(25, 25, 25);
@@ -187,4 +199,12 @@ ul {
 #linkedin {
     width: 65px;
     filter:grayscale(1) contrast(100) invert(1);
+}
+
+h1 {
+    font-size:15px;
+}
+
+h2 {
+    font-size:15px;
 }
