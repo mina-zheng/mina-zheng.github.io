@@ -55,7 +55,7 @@ html, body {
     width: 50vw;
 }
 
-.maintext_about_me, .maintext_resume {
+.maintext_about_me, .maintext_resume, .maintext_contact {
     display: none;
     width: 100%;
     height: 100%;
@@ -202,8 +202,8 @@ ul {
 }
 
 #instagram {
-    width: 55px;
-    filter: contrast(100) invert(1);
+    width: 50px;
+    filter: contrast(100);
 }
 
 h1 {
