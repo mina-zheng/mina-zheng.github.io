@@ -201,6 +201,11 @@ ul {
     filter:grayscale(1) contrast(100) invert(1);
 }
 
+#instagram {
+    width: 55px;
+    filter: contrast(100) invert(1);
+}
+
 h1 {
     font-size:15px;
 }

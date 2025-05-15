@@ -1,8 +1,9 @@
 const main_text = document.querySelector('.maintext');
 const about_me_text = document.querySelector('.maintext_about_me');
 const resume_text = document.querySelector('.maintext_resume');
+const contact_text = document.querySelector('.maintext_contact');
 
-const texts = [main_text, about_me_text, resume_text];
+const texts = [main_text, about_me_text, resume_text, contact_text];
 
 function hideAll() {
     texts.forEach(t => t.style.display = 'none');
@@ -23,6 +24,8 @@ menuItems.forEach(menu => {
             showSection(about_me_text);
         } else if (text === "| resume.py") {
             showSection(resume_text);
+        } else if (text === "| contact_info.py") {
+            showSection(contact_text);
         }
     });
 });
@@ -41,6 +44,10 @@ input.addEventListener("keydown", function(event) {
         else if (readInput == "main.py") {
             showSection(main_text);
         }
+        else if (readInput == "contact_info.py") {
+            showSection(contact_text);
+        }
+
         input.value = '';
     }
     
