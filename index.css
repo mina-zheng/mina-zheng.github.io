@@ -1,0 +1,14 @@
+.body {
+    position:fixed;
+    left:300px;
+    right:50px;
+}
+
+.sidebar {
+    position:absolute;
+}
+
+.skills {
+    display:flex;
+    justify-content: space-around;
+}
