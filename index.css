@@ -3,7 +3,7 @@
     --2: rgb(121, 19, 144);
     --3: rgb(126, 232, 234);
     --4: rgb(236, 136, 50);
-    --5: rgb(235, 255, 185);
+    --5: rgb(236, 255, 166);
 }
 
 body {
@@ -66,6 +66,10 @@ em {
     background-color: inherit;
 }
 
+.sidebar p {
+    font-size: 0.9rem;
+}
+
 .image-wrapper {
     width:150px;
     background-color: inherit;
@@ -76,11 +80,10 @@ img {
     background-color: inherit;
 }
 
-.text, .sidebar-text {
-    background-color: inherit;
-}
-
 .skills {
+    background-color: var(--5);
+    border-radius:30px;
+    padding:20px;
     display:flex;
     align-items: center;
     margin-top:60px;
@@ -129,15 +132,20 @@ img {
 }
 
 .exp {
-   display:flex;
-   flex-direction:column;
-   justify-content: flex-start;
-   align-items:center;
+    margin-top: 60px;
+    border-radius:30px;
+    background-color: var(--5);
+    display:flex;
+    flex-direction:column;
+    justify-content: flex-start;
+    align-items:center;
 }
 
 .box-wrapper {
+    margin:20px;
     display:flex;
     justify-content: space-around;
+    align-items: center;
     width:100%;
     gap:20px;
 
@@ -146,9 +154,62 @@ img {
 .box {
     background-color: var(--3);
     border-radius:30px;
-    width:300px;
+    width:250px;
     height:400px;
     padding:20px;
+}
+
+.buttons {
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+    height:200px;
+    
+}
+.button {
+    background-color: var(--4);
+    border-radius:30px;
+    gap:40px;
+    border:none;
+    padding:10px;
+    width:60%;
+    
+    color:var(--1);
+    font-size:0.9rem;
+    font-family:'Courier New', Courier, monospace;
+    font-weight:bold;
+    font-size: minmax(10px, 20px);
+
+    cursor:pointer;
+
+}
+
+.button:hover {
+    background-color: var(--2);
+}
+
+.icons {
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+#github {
+    height:50px;
+    width:auto;
+}
+
+#linkedin {
+    width: 65px;
+}
+
+#instagram {
+    width: 50px;
+}
+
+.resume button {
+    margin-top:20px;
+    width:40%;
 }
 
 @media (max-width: 1200px) {
@@ -157,6 +218,7 @@ img {
         align-items: stretch;
         gap:0px;
         margin:0px;
+        margin-top:60px;
     }
 
     .skills-wrapper {
@@ -177,6 +239,6 @@ img {
     }
 
     .box {
-        width:100%;
+        width:80%;
     }
 }
