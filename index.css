@@ -163,7 +163,7 @@ img {
     display:flex;
     flex-direction: column;
     gap:20px;
-    height:200px;
+    height:100px;
     
 }
 .button {
@@ -255,5 +255,6 @@ img {
 
     .box {
         width:80%;
+        height:auto;
     }
 }
