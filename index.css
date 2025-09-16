@@ -142,6 +142,7 @@ img {
 }
 
 .box-wrapper {
+    flex-wrap:wrap;
     margin:20px;
     display:flex;
     justify-content: space-around;
