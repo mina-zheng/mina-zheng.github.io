@@ -102,7 +102,7 @@ img {
     background-color: var(--4);
     padding:10px;
     border-radius:30px;
-    width:300px;
+    width:max(250px, 25%);
 }
 
 .fam p,
@@ -155,7 +155,7 @@ img {
 .box {
     background-color: var(--3);
     border-radius:30px;
-    width:250px;
+    width:max(250px, 40%);
     height:400px;
     padding:20px;
 }
