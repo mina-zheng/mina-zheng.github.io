@@ -1,30 +1,39 @@
-import { TransformWrapper, TransformComponent, useControls } from 'react-zoom-pan-pinch';
+import { useControls } from 'react-zoom-pan-pinch';
 import '../style/App.css'
 
-const CustomControls = ({ transformState, setTransformState, setShowButton }) => {
+const CustomControls = ({ setTransformState, setShowButton, setShowPanButton, showPanButton }) => {
     const { setTransform } = useControls();
 
     const handlePan = (panStep, id) => {
-        const { positionX, positionY, scale } = transformState;
+        setTransformState((prev) => {
+            const nextX = prev.positionX + panStep;
+            setTransform(nextX, prev.positionY, prev.scale, 300, 'easeOut');
+            return { ...prev, positionX: nextX };
+        });
 
-        const newx = positionX + panStep;
-
-        setTransform(newx, positionY, scale, 300, "easeOut");
-        setTransformState((prev) => ({...prev, positionX:newx}));
-        
         setShowButton(id);
-    }
+        setShowPanButton(false);
+    };
 
     return (
         <>
-        <button className = "right" onClick = {() => handlePan(450, 1)}>
-            pan right!
-        </button>
-        <button className = "left" onClick = {() => handlePan(-450, 2)}>
-            pan left!
-        </button>
+            {(showPanButton) && (
+                <button className="exp" onClick={() => handlePan(450, 1)}>
+                    <img src="/src/assets/experience.png"/>
+                </button>
+            )}
+            {(showPanButton) && (
+                <button className="abt" onClick={() => handlePan(450, 2)}>
+                    <img src="/src/assets/about.png"/>
+                </button>
+            )}
+            {(showPanButton) && (
+                <button className="proj" onClick={() => handlePan(-450, 3)}>
+                    <img src="/src/assets/projects.png"/>
+                </button>
+            )}
         </>
-    )
-}
+    );
+};
 
 export default CustomControls
